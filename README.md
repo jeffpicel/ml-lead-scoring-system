@@ -1,12 +1,16 @@
-# ml-lead-scoring-system
-Generalized reference implementation for a modular end-to-end ML system for lead scoring, featuring:
-- business relevant evaluation framework
-- modular data prep and feature engineering
-- a highly scalable model selection process
-- production-ready notebook-based training/inference pipeline.
+# Modular ML Lead Scoring System
 
-I developed this reference code as a template after building multiple ML lead scoring systems across multiple companies.
+A generalized reference implementation for a modular, end-to-end ML system. This project serves as a template for production-grade lead scoring pipelines, developed based on systems built for multiple B2B organizations.
 
-Most of the repo is a general pipeline, but the evaluation framework that's used heavily during model selection is specific to lead scoring. The evaluation framework measures the business value that a model (or heuristic) is expected to deliver assuming a world in which a company can only do outbound sales to a fraction of its lead universe and wants to rank leads by predicted revenue (or profit) value, conditional on acquisition.
+## Key Features
+* **Business-Centric Evaluation:** A framework designed to measure expected revenue/profit value, optimized for scenarios where sales capacity is a fraction of the total lead universe.
+* **Modular Architecture:** Separate modules for data preparation, feature engineering, and model selection to prevent training-serving skew.
+* **Scalable Selection:** A robust process for benchmarking candidate models against business-specific KPIs.
+* **Production Pipeline:** Notebook-based training and inference workflow designed for rapid deployment and iteration.
 
-Any users will need to add training data and adjust all files appropriately to reflect the label, the appropriate evaluation cutoffs, the features, and new winning model configuration. The default features are all just placeholders.
+## Usage Note
+This repository is a **reference implementation**. To use this in a live environment:
+1. Provide your own training/inference datasets.
+2. Update `data_preparation.py` to reflect your specific schema and labels.
+3. Adjust evaluation cutoffs in the selection framework to match your sales capacity.
+4. Replace placeholder features with domain-specific signals.
